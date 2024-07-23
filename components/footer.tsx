@@ -1,4 +1,12 @@
-import { darmaSiteInfo } from "@/app/layout";
+export const darmaSiteInfo = {
+  title: "DarmaT0o0 Site",
+  description: "DarmaT0o0 Site",
+  name: "DarmaT0o0",
+  copylight: {
+    name: "プライバシーについて",
+    link: "",
+  },
+};
 
 const Footer = () => {
   return (

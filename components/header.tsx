@@ -1,6 +1,17 @@
 import Link from "next/link";
 import { ModeToggle } from "./mode-toggle";
 
+interface HeaderNavLink {
+  name: string;
+  href: string;
+}
+
+const headerNavLinks: HeaderNavLink[] = [
+  { name: "Home", href: "/" },
+  { name: "About", href: "/about" },
+  { name: "Blog", href: "/blog" },
+];
+
 const Header = () => {
   return (
     <header className="container h-16 border-b flex justify-between items-center">
@@ -9,15 +20,16 @@ const Header = () => {
       </h1>
       <div className="flex items-center space-x-3">
         <ul className="flex gap-3">
-          <li className="text-lg">
-            <Link href="/">Home</Link>
-          </li>
-          <li className="text-lg">
-            <Link href="/about">About</Link>
-          </li>
-          <li className="text-lg">
-            <Link href="/">Blog</Link>
-          </li>
+          {headerNavLinks.map((item) => (
+            <li key={item.name} className="">
+              <Link
+                href={item.href}
+                className="text-lg p-2 rounded-lg  hover:bg-slate-200 hover:font-bold"
+              >
+                {item.name}
+              </Link>
+            </li>
+          ))}
         </ul>
         <div>
           <ModeToggle />

@@ -11,12 +11,17 @@ export const darmaSiteInfo = {
 const Footer = () => {
   return (
     <footer className="container h-16 border-t">
-      <div className="flex flex-col items-center p-2">
-        <p>
-          &copy; 2024
-          <span className="p-2 underline">{darmaSiteInfo.name}</span>
-        </p>
-        <p> {darmaSiteInfo.copylight.name}</p>
+      <div className="flex justify-between">
+        <div className="flex flex-col items-center p-2">
+          <div>
+            <p>
+              &copy; 2024
+              <span className="p-2 underline">{darmaSiteInfo.name}</span>
+            </p>
+            <p> {darmaSiteInfo.copylight.name}</p>
+          </div>
+        </div>
+        <div className="flex"></div>
       </div>
     </footer>
   );

@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from 'next/link';
 
 interface HomeContentType {
   content: ContentType[];
@@ -12,14 +12,14 @@ interface ContentType {
 const homeContent: HomeContentType = {
   content: [
     {
-      name: "About",
-      href: "/about",
-      description: "DarmaT0o0のプログラミングに関連についてを紹介します。",
+      name: 'About',
+      href: '/about',
+      description: 'DarmaT0o0のプログラミングに関連についてを紹介します。',
     },
     {
-      name: "Blog",
-      href: "/blog",
-      description: "プログラミング学習のアウトプットを投稿しているサイトです。",
+      name: 'Blog',
+      href: '/blog',
+      description: 'プログラミング学習のアウトプットを投稿しているサイトです。',
     },
   ],
 };
@@ -27,12 +27,12 @@ const homeContent: HomeContentType = {
 export default function Home() {
   return (
     <main className="container flex flex-col items-center justify-between py-16 ">
-      <section className="grid sm:grid-cols-2 gap-3 ">
+      <section className="grid sm:grid-cols-2 gap-3 grid-flow-row">
         {homeContent.content.map((item) => (
           <Link
             key={item.name}
             href={item.href}
-            className="p-6  max-w-[300px] min-h-[300px]  bg-gradient-to-r from-indigo-200 to-blue-700"
+            className="hover:translate-x-2 hover:-translate-y-2  p-6  min-w-[300px] min-h-[300px] max-w-[300px]  bg-gradient-to-r from-indigo-200 to-blue-700"
           >
             <h2 className="text-2xl font-bold">{item.name}</h2>
             <p className="text-lg py-4 ">{item.description}</p>

@@ -1,5 +1,6 @@
 import {
   AndroidIcon,
+  AwsIcon,
   CssIcon,
   FlutterIcon,
   HtmlIcon,
@@ -7,7 +8,7 @@ import {
   SupabaseIcon,
   TypescriptIcon,
 } from '@/components/icon';
-import { TechStackProps } from './tech-stack';
+import type { TechStackProps } from './tech-stack';
 
 /** 　TIME LINE HISTORY */
 interface HistoryStackProps {
@@ -46,7 +47,12 @@ const timeLineHistoryStacks: HistoryStackProps[] = [
       {
         name: 'Flutter',
         icon: <FlutterIcon />,
-        description: 'Android,iOSの開発ができるます。',
+        description: 'Android,iOSの開発ができます。',
+      },
+      {
+        name: 'Markdown',
+        icon: <MarkdownIcon width="50" height="60" />,
+        description: 'Markdownが好きで、Markdownを使ったブログを作った経験があります。',
       },
     ],
   },
@@ -64,6 +70,11 @@ const timeLineHistoryStacks: HistoryStackProps[] = [
         description: 'Supabaseを使った開発経験もあります。',
         icon: <SupabaseIcon />,
       },
+      {
+        name: 'AWS',
+        description: 'ECS,VPC,RDB,ECSを使って開発経験もあります。',
+        icon: <AwsIcon width="40" height="40" />,
+      },
     ],
   },
   {
@@ -78,7 +89,7 @@ const TimeLineHistory = () => (
     </div>
     <div className="flex flex-col gap-2 pt-10">
       {timeLineHistoryStacks.map((history) => (
-        <div className="flex  gap-8 min-h-[200px]">
+        <div className="flex  gap-8 min-h-[200px]" key={history.year}>
           {/* header */}
           <div key={history.year} className=" flex flex-col items-center gap-2">
             <div className="flex items-center justify-center bg-gray-400 w-16 h-16 rounded-[50%] ">
@@ -92,13 +103,16 @@ const TimeLineHistory = () => (
             <div>
               <ul className="flex flex-wrap items-center gap-2 ">
                 {history.stack?.map((stack) => (
-                  <li className="relative group  flex flex-col items-center justify-between min-w-[100px] min-h-[100px] p-2 border">
+                  <li
+                    key={stack.name}
+                    className="relative group  flex flex-col items-center justify-between min-w-[100px] min-h-[100px] p-2 border"
+                  >
                     {stack.icon && <div>{stack.icon}</div>}
                     <div className="text-sm">{stack.name}</div>
                     {stack.description && (
                       <div
-                        className="absolute hidden  group-hover:block group-hover:scale-110 group-hover:animate-wiggle top-[-65px]
-                      text-center  px-2 border text-wrap min-w-[200px]
+                        className="absolute hidden align-middle  group-hover:block group-hover:scale-110 group-hover:animate-wiggle top-[-65px]
+                      text-center  p-2 border text-wrap min-w-[300px]  bg-white rounded-md
                       before:content-[''] before:absolute before:top-full before:left-1/2 before:translate-x-[-50%] before:border-8
                       before:border-transparent before:border-t-gray-300 "
                       >

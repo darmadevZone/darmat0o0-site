@@ -5,6 +5,7 @@ import {
   FlutterIcon,
   HtmlIcon,
   JavascriptIcon,
+  MarkdownIcon,
   SupabaseIcon,
   TypescriptIcon,
 } from '@/components/icon';

@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import { GithubIcon, TwitterIcon } from './icon';
 
@@ -33,15 +34,15 @@ export const darmaSiteInfo: DarmaT0o0SiteInfoType = {
     },
     {
       name: 'Twitter',
-      link: 'https://twitter.com/darmadevZone',
+      link: 'https://x.com/DarmaT1o',
       icon: <TwitterIcon height="20" width="20" />,
       published: true,
     },
     {
       name: 'Zenn',
-      link: 'https://zenn.dev/darmadevZone',
-      icon: <TwitterIcon height="20" width="20" />,
-      published: false,
+      link: 'https://zenn.dev/dandan',
+      icon: <Image src="/zenn.svg" width={20} height={20} alt="zenn" />,
+      published: true,
     },
   ],
   privacy: {
@@ -68,11 +69,11 @@ const Footer = () => {
             </div>
           )}
         </div>
-        <div className="grid grid-cols-3 gap-2">
+        <div className="grid grid-cols-3 gap-2 ">
           {darmaSiteInfo.sns.map(
             (sns) =>
               sns.published && (
-                <Link href={sns.link} key={sns.name}>
+                <Link href={sns.link} key={sns.name} target="_blank" rel="noreferrer">
                   <div className="p-2 bg-slate-300 rounded-lg hover:opacity-50">
                     <p>{sns.icon}</p>
                   </div>

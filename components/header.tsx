@@ -9,7 +9,7 @@ interface HeaderNavLink {
 const headerNavLinks: HeaderNavLink[] = [
   { name: 'Home', href: '/' },
   { name: 'About', href: '/about' },
-  { name: 'Blog', href: '/blog' },
+  { name: 'Blog', href: 'https://darmat0v0.vercel.app/' },
 ];
 
 const Header = () => {
@@ -33,7 +33,8 @@ const Header = () => {
               <li key={item.name}>
                 <Link
                   href={item.href}
-                  className="text-lg p-2 rounded-lg   hover:bg-slate-200 hover:font-bold hover:opacity-70"
+                  className="text-lg p-2 rounded-lg   hover:bg-slate-200 hover:font-bold hover:opacity-50 "
+                  target={item.name === 'Blog' ? '_blank' : '_self'}
                 >
                   {item.name}
                 </Link>
